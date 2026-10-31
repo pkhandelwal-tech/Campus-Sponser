@@ -9,7 +9,7 @@ const getAIResponse = asyncHandler(async (req, res) => {
     const { prompt } = req.body;
 
     // 🔒 SECURITY CHECK: Key .env se aa rahi hai ya nahi
-    const apiKey = process.env.AI_API_KEY;
+    const apiKey = process.env.GEMINI_API_KEY || process.env.AI_API_KEY;
 
     if (!apiKey) {
         console.error("❌ ERROR: AI_API_KEY is missing in .env file");
